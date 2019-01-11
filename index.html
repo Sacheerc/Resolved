@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h4>login form</h4>
+    <form id="form" style="display: none">
+        email <input id="email" type="text" placeholder="name" required>
+        <br><br>
+        password <input id="password" type="password" placeholder="password" required>
+        <br><br>
+        <button type="button" onclick="login()">login</button>
+    </form>
+
+    <button id="logout" type="button" onclick="logout()" style="display: none">logout</button>
+
+    <h1 id="status"></h1>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBccjlbh3IpQK_Lfc1mRPdxe1oFoY6_V3c",
+            authDomain: "esolved-2019.firebaseapp.com",
+            databaseURL: "https://esolved-2019.firebaseio.com",
+            projectId: "esolved-2019",
+            storageBucket: "esolved-2019.appspot.com",
+            messagingSenderId: "164798168950"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>
