@@ -262,7 +262,7 @@ section
 }
 .header.scrolled
 {
-	top: -40px;
+	top: 0px;
 }
 
 /*********************************
@@ -383,7 +383,7 @@ section
 .logo_text
 {
 	font-family: 'Roboto Slab', serif;
-	font-size: 36px;
+	font-size: 24px;
 	font-weight: 700;
 	line-height: 0.75;
 	color: #384158;
