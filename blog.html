@@ -12,6 +12,10 @@
 <link rel="stylesheet" type="text/css" href="styles/blog.css">
 <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 
+<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
+<script src="backendjs/init.js"></script>
+
+
 </head>
 <body>
 
@@ -403,8 +407,29 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		</div>
 	</footer>
 </div>
-<script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
-<script src="backendjs/init.js"></script>
+<!--<button class="btn btn-success" onclick="insert()">click me</button>-->
+
+<script>
+    var data = firebase.database().ref('posts' + '/id');
+    data.on('value', function(snapshot) {
+        window.alert(snapshot.val().ad);
+    });
+    
+    function insert() {
+        var data = firebase.database().ref('posts');
+        var newPostRef = data.push();
+        newPostRef.set({
+            username: 'Madushan rathnayake'
+        }, function(error) {
+			if (error) {
+				alert('error')
+			} else {
+				alert('success')
+			}
+    	});
+    }
+</script>
+
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
